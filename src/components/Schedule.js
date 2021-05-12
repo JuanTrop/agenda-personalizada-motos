@@ -6,15 +6,13 @@ class ScheduleItem extends React.Component{
         super(props);
 
         this.state = {
-            bikeCounter: this.props.hour.currentData,
             color: 'white'
         };
     }
 
     changeColor = e => {
         var color = 'white';
-        var value = 0;
-        var bikeCounter = this.state.bikeCounter;
+        var bikeCounter = this.props.data.currentData;
         var stateColor = this.state.color;
         console.log(bikeCounter);
 
@@ -23,41 +21,39 @@ class ScheduleItem extends React.Component{
                 color = 'red';
             } else if(bikeCounter > 0){
                 color = 'green';
-                value = bikeCounter - 1;
+                this.props.changeColor(e, -1);
             }
         } else if(stateColor === 'green'){
             if (bikeCounter === 0){
-                color = 'red';
+                color = 'white';
             } else if(bikeCounter > 0 && bikeCounter < 8){
                 color = 'white';
-                value = bikeCounter + 1;
             }
+            this.props.changeColor(e, 1);
         } else {
             if (bikeCounter === 0){
                 color = 'white';
             } else if(bikeCounter > 0){
                 color = 'green'
-                value = bikeCounter + 1;
+                this.props.changeColor(e, -1);
             }
         }
 
         this.setState({
-            bikeCounter: value,
             color: color
         });
 
-        this.props.changeColor(e, bikeCounter-value);
+
     }
 
     render(){
         return(
             <div 
             className="schedule__item" 
-            onClick = {this.changeColor}
             style = {{backgroundColor: this.state.color}}
             >
                 <h2 className="schedule__item-title">
-                    {this.props.hour.hour}
+                    {this.props.data.hour}
                 </h2>
                 <button type="button" onClick={this.changeColor}>Apartar</button>
             </div>
@@ -99,28 +95,27 @@ class Schedule extends React.Component{
 
         this.state = {
             bikeCounter: 8,
-            actual: 8,
             color: 'white',
         };
 
     }
 
-    changeColor = (e, bikeCounter) => {
-        var value = this.state.bikeCounter - bikeCounter;
+    changeColor = (e, add) => {
+        var value = this.state.bikeCounter + add;
 
         this.setState({
-            actual: value,
+            bikeCounter: value,
         });
     }
 
     render(){
         return(
             <div className="schedule">
-                <h2>Motos disponibles &nbsp;{this.state.actual}</h2>
+                <h2>Motos disponibles &nbsp;{this.state.bikeCounter}</h2>
                 <div className="schedule__itemcontainer">
                     { this.scheduleList.map(hour => {
                         return(
-                                <ScheduleItem key = {hour} hour= {{hour:hour, currentData: this.state.actual}} changeColor ={this.changeColor}></ScheduleItem>
+                                <ScheduleItem key = {hour} data= {{hour:hour, currentData: this.state.bikeCounter}} changeColor ={this.changeColor}></ScheduleItem>
                         )
                     })
                     }
@@ -128,6 +123,7 @@ class Schedule extends React.Component{
             </div>
         );
     }
+
 }
 
 export default Schedule;

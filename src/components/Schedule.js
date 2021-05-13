@@ -113,6 +113,7 @@ class Schedule extends React.Component{
     render(){
         return(
             <div className="schedule">
+                <p className="schedule__info">A Motocycle booking Interface</p>
                 <h2 className="schedule__bookings">Bykes available: &nbsp;{this.state.bikeCounter}</h2>
                 <div className="schedule__itemcontainer">
                     { this.scheduleList.map(hour => {
@@ -122,6 +123,7 @@ class Schedule extends React.Component{
                     })
                     }
                 </div>
+                <p className="schedule__feedback"> Please give me your feedback </p>
             </div>
         );
     }

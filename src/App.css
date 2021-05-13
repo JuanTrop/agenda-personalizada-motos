@@ -17,7 +17,22 @@ h1 {
 .schedule h2{
   text-align: center;
   font-family: 'Crimson Text', serif;
+  padding: 0.5em;
 
+}
+
+.schedule__info {
+  background-color: white;
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  margin: 0em 0em 2em 0em;
+}
+
+.schedule__feedback {
+  background-color: white;
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  margin: 0em 0em 2em 0em;
 }
 
 .schedule__bookings{

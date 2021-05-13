@@ -2,19 +2,56 @@
   text-align: center;
 }
 
-.schedule {
-  overflow-x: scroll;
+body {
+  background-color: #2a1919;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 0.2em 0em 1.5em 0em;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  background-color: white;
+}
+
+.schedule h2{
+  text-align: center;
+  font-family: 'Crimson Text', serif;
+
+}
+
+.schedule__bookings{
+  background-color: white;
+}
+
+.schedule__item h2 {
+  padding: 1em;
+  border-color: white;
+  font-style:oblique;
+}
+
+.schedule__item button{
+  font-family: 'Crimson Text', serif;
+  font-size: 1.2em;
 }
 
 .schedule__itemcontainer{
   display: flex;
+  overflow-x: scroll;
 }
 
 .schedule__item{
   display: flex;
   margin: 2em;
-  border: 0.2em black solid;
+  border: 0.3em black solid;
+  border-radius: 2%;
 }
+
+.schedule__item:hover{
+  transform: translate3d(0,4px,4px);
+  border: 1px white solid;
+}
+
 
 .schedule__item-title{
   border: 0.02em black solid;

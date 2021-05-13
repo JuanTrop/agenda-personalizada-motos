@@ -12,18 +12,18 @@ class ScheduleItem extends React.Component{
 
     changeColor = e => {
         var color = 'white';
+        var green = '#40664c';
         var bikeCounter = this.props.data.currentData;
         var stateColor = this.state.color;
-        console.log(bikeCounter);
 
         if(stateColor === 'white'){
             if (bikeCounter === 0){
                 color = 'red';
             } else if(bikeCounter > 0){
-                color = 'green';
+                color = green
                 this.props.changeColor(e, -1);
             }
-        } else if(stateColor === 'green'){
+        } else if(stateColor === green){
             if (bikeCounter === 0){
                 color = 'white';
             } else if(bikeCounter > 0 && bikeCounter < 8){
@@ -34,7 +34,7 @@ class ScheduleItem extends React.Component{
             if (bikeCounter === 0){
                 color = 'white';
             } else if(bikeCounter > 0){
-                color = 'green'
+                color = green
                 this.props.changeColor(e, -1);
             }
         }
@@ -50,12 +50,14 @@ class ScheduleItem extends React.Component{
         return(
             <div 
             className="schedule__item" 
-            style = {{backgroundColor: this.state.color}}
+            style = {{backgroundColor: this.state.color,
+                      borderColor: this.state.color
+            }}
             >
                 <h2 className="schedule__item-title">
                     {this.props.data.hour}
                 </h2>
-                <button type="button" onClick={this.changeColor}>Apartar</button>
+                <button type="button" onClick={this.changeColor}>Book</button>
             </div>
         );
     }
@@ -111,7 +113,7 @@ class Schedule extends React.Component{
     render(){
         return(
             <div className="schedule">
-                <h2>Motos disponibles &nbsp;{this.state.bikeCounter}</h2>
+                <h2 className="schedule__bookings">Bykes available: &nbsp;{this.state.bikeCounter}</h2>
                 <div className="schedule__itemcontainer">
                     { this.scheduleList.map(hour => {
                         return(

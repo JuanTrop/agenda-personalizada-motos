@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/agenda-personalizada-motos/static/css/main.734c7093.chunk.css",
+    "main.js": "/agenda-personalizada-motos/static/js/main.fc7f250d.chunk.js",
+    "main.js.map": "/agenda-personalizada-motos/static/js/main.fc7f250d.chunk.js.map",
+    "runtime-main.js": "/agenda-personalizada-motos/static/js/runtime-main.7fdefbba.js",
+    "runtime-main.js.map": "/agenda-personalizada-motos/static/js/runtime-main.7fdefbba.js.map",
+    "static/js/2.23f11f0f.chunk.js": "/agenda-personalizada-motos/static/js/2.23f11f0f.chunk.js",
+    "static/js/2.23f11f0f.chunk.js.map": "/agenda-personalizada-motos/static/js/2.23f11f0f.chunk.js.map",
+    "static/js/3.00ddba03.chunk.js": "/agenda-personalizada-motos/static/js/3.00ddba03.chunk.js",
+    "static/js/3.00ddba03.chunk.js.map": "/agenda-personalizada-motos/static/js/3.00ddba03.chunk.js.map",
+    "index.html": "/agenda-personalizada-motos/index.html",
+    "static/css/main.734c7093.chunk.css.map": "/agenda-personalizada-motos/static/css/main.734c7093.chunk.css.map",
+    "static/js/2.23f11f0f.chunk.js.LICENSE.txt": "/agenda-personalizada-motos/static/js/2.23f11f0f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7fdefbba.js",
+    "static/js/2.23f11f0f.chunk.js",
+    "static/css/main.734c7093.chunk.css",
+    "static/js/main.fc7f250d.chunk.js"
+  ]
+}
